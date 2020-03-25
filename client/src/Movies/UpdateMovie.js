@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
-import Movie from './Movie';
+
 
 const initialMovie = {
     id: '',
@@ -41,6 +41,21 @@ const UpdateMovie = props => {
     const handleSubmit = e =>{
         e.preventDefault();
 
+        axios
+            .put(`http://localhost:5001/api/movies/${id}`, movie)
+            .then(response =>{
+                console.log("PUT req",response)
+                const updatedList = props.movies.map(flick => {
+                    if (`${flick.id}`=== id){
+                        return movie
+                    }else {
+                        return flick
+                    }
+                })
+                console.log("New Array",updatedList)
+                props.setMovieList(updatedList)
+                push('/')
+            })
     }
 
     return(
