@@ -67,7 +67,7 @@ body {
 }
 .update-button {
   position: absolute;
-  bottom: 25px;
+  bottom: 100px;
   right: 25px;
   border: 1px solid grey;
   padding: 5px 10px;
@@ -75,6 +75,18 @@ body {
 }
 .update-button:hover {
   background-color: blue;
+  color: white;
+}
+.delete-button {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: pink;
+}
+.delete-button:hover {
+  background-color: red;
   color: white;
 }
 

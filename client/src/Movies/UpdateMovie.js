@@ -77,7 +77,7 @@ const UpdateMovie = props => {
               value={movie.director}
             />
             <input 
-              type="text"
+              type="number"
               name="metascore"
               onChange={changeHandler}
               placeholder="Metascore"
